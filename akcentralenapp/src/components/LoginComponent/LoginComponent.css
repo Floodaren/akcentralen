@@ -1,0 +1,15 @@
+.loginInfo
+{
+    display: inline-block;
+}
+
+table
+{
+    border: 1px solid black;
+}
+
+#logInFields
+{
+    display: inline-block;
+    width: 25%;
+}
