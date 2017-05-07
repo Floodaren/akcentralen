@@ -86,6 +86,8 @@ handleSubmit(e) {
             </FormGroup>
           </Form>
         </div>
+        <h3>{this.state.stateId}</h3>
+        <h3>{this.state.stateUsername}</h3>
       </div>
     );
   }
