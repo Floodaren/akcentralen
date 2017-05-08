@@ -4,10 +4,10 @@ import Form from 'react-bootstrap/lib/Form';
 import FormGroup  from 'react-bootstrap/lib/FormGroup'; 
 import FormControl  from 'react-bootstrap/lib/FormControl';
 import Col  from 'react-bootstrap/lib/Col';
-import Checkbox from 'react-bootstrap/lib/Checkbox';
 import cookie from 'react-cookie';
 import axios from 'axios';
 import 'whatwg-fetch';
+import RememberMeComponent from '../RememberMeComponent/RememberMeComponent.js';
 
 var userName;
 var passWord;
@@ -73,7 +73,7 @@ handleSubmit(e) {
 
             <FormGroup>
               <Col smOffset={0.5} sm={20}>
-                <Checkbox>Kom ihåg mig</Checkbox>
+                <RememberMeComponent/>
               </Col>
             </FormGroup>
 
