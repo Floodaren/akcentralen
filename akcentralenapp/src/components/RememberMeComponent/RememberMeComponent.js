@@ -12,14 +12,14 @@ class App extends Component {
 
     rememberMeFunction(event)
     {       
-        if (checkboxActive == false)
+        if (checkboxActive === false)
         {
-            alert("on");
+            console.log("on");
             checkboxActive = true;
         }
-        else if (checkboxActive == true)
+        else if (checkboxActive === true)
         {
-            alert("off");
+            console.log("off");
             checkboxActive = false;
         }
     }
