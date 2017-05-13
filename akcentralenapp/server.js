@@ -28,17 +28,17 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/test', function (req, res) {
-  res.send('Hello World!')
-  console.log("test");
-})
+app.get('/getJobList', function(req,res){
+  connection.query('SELECT * FROM JobbLista', function(error,result){
+    console.log(result);
+  });
+});
 
 
 app.post('/logInUser', function(req, res) {
   var user = {username: req.body.username, password: req.body.password};
-  //console.log(user.username + " " + user.password);
   
-  connection.query('SELECT id,Username FROM Användare WHERE Username = ' + "'" + user.username + "' AND Password = '" + user.password + "'", 
+  connection.query('SELECT id,Email,TypeOfUser FROM Användare WHERE Email = ' + "'" + user.username + "' AND Password = '" + user.password + "'", 
   function(error, result){
     if (result == 0)
     {
@@ -46,7 +46,7 @@ app.post('/logInUser', function(req, res) {
     }
     else
     {
-      res.send({userId: result[0].id, userName: result[0].Username});
+      res.send({userId: result[0].id, userName: result[0].Username, email: result[0].Email, typeOfUser: result[0].TypeOfUser});
     }
   }); 
 });
