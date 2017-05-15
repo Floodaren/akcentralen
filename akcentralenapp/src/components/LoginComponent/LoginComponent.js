@@ -17,14 +17,9 @@ onChangeLoggedIn()
 }
 
   render() {
-    let showLoginForm = "";
-    if (this.props.loggedIn === false)
-    {
-      showLoginForm = <LoginFormComponent method={this.onChangeLoggedIn}/>
-    }
     return (
       <div>
-        {showLoginForm}
+        <LoginFormComponent method={this.onChangeLoggedIn}/>
       </div>
     );
   }

@@ -31,6 +31,7 @@ app.use(function(req, res, next) {
 app.get('/getJobList', function(req,res){
   connection.query('SELECT * FROM JobbLista', function(error,result){
     console.log(result);
+    res.send({jobb: result});
   });
 });
 

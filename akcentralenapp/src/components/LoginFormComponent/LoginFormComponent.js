@@ -36,7 +36,7 @@ handleSubmit() {
   .then(function (response) {
     if (response.data.userId === 0)
     {
-      alert("Felaktig login, försök igen");
+      alert("Felaktiga inloggningsuppgifter, försök igen");
     }
     else
     {
@@ -47,6 +47,8 @@ handleSubmit() {
       console.log(cookies.get('email'));
       console.log(cookies.get('typeOfUser'));
       self.props.method();
+      userName = "";
+      passWord = "";
     }
   })
   .catch(function (error) {
