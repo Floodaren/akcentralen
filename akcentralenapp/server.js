@@ -28,9 +28,33 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/getJobList', function(req,res){
-  connection.query('SELECT * FROM JobbLista', function(error,result){
+app.get('/getAllJobs', function(req,res){
+  connection.query('SELECT * FROM JobbLista', 
+  function(error,result){
     console.log(result);
+    res.send({jobb: result});
+  });
+});
+
+app.post('/getJobList', function(req,res){
+  var user = {userId: req.body.userId}
+  connection.query('SELECT * FROM JobbLista WHERE userId = ' + "'" + user.userId + "'", 
+  function(error,result){
+    for (var i = 0; i<result.length;i++)
+    {
+      if(result[i].jobStatus == 0) 
+      {
+        result[i].jobStatus = "Ännu inte utfört";
+      } 
+      else if (result[i].jobStatus == 1)
+      {
+        result[i].jobStatus = "Utför jobb";
+      }
+      else 
+      {
+        result[i].jobStatus = "Jobb utfört";
+      }
+    }
     res.send({jobb: result});
   });
 });

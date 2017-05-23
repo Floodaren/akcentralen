@@ -1,0 +1,26 @@
+#UpdateButton
+{
+    display: block;
+    float: right;
+    margin-right: 175px;
+    clear: both;
+    margin-bottom: 2%;
+    
+}
+
+#updateAndNewJob 
+{
+    margin-bottom: 50px;
+}
+
+#newJobButton
+{
+    margin-right: 20px;
+    padding: 5px;
+}
+
+#updateJobButton 
+{
+    margin-left: 20px;
+    padding: 5px;
+}

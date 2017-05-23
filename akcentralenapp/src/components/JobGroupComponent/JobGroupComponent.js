@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './JobGroupComponent.css';
 import JobGroupItem from '../JobGroupItem/JobGroupItem';
 
 class JobGroup extends Component {
@@ -8,8 +9,8 @@ class JobGroup extends Component {
     const listItems = this.props.dataset.map((job, i) => <JobGroupItem key={i} jobDetails={job}/>);
     
     return (
-      <div>     
-        <ul>
+      <div>    
+        <ul id="jobHolder">
             {listItems}
         </ul>
       </div>

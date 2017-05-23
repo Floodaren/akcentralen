@@ -38,8 +38,6 @@ removeCookie(event)
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem eventKey={1} href="#">Link</NavItem>
-              <NavItem eventKey={2} href="#">Link</NavItem>
             </Nav>
             <Nav pullRight>
               <NavItem eventKey={1} href="#">Link Right</NavItem>
