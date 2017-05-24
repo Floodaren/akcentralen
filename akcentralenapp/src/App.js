@@ -6,6 +6,7 @@ import NavbarComponent from './components/NavbarComponent/NavbarComponent';
 import ContactComponent from './components/ContactComponent/ContactComponent';
 import AboutComponent from './components/AboutComponent/AboutComponent';
 import GetJobsComponent from './components/GetJobsComponent/GetJobsComponent';
+import Modal from './components/Modal/Modal.js';
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 

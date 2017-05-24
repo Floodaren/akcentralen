@@ -91,8 +91,7 @@ app.post('/removeJob', function(req, res){
   var jobToRemove = {jobId: req.body.jobId}
   connection.query('DELETE FROM JobbLista WHERE id = ' + jobToRemove.jobId,
   function(error,result){
-    console.log(result);
-    console.log(error);
+    res.send({});
   });
 });
 
@@ -100,6 +99,14 @@ app.post('/saveJobChanges', function(req,res){
   var jobToChange = {jobId: req.body.jobId, newJobNumber: req.body.newJobNumber, newJobName: req.body.newJobName, newJobStatus: req.body.newJobStatus}
   connection.query('UPDATE JobbLista SET butikId = ' + "'" + jobToChange.newJobNumber + "', butiksNamn = '" + jobToChange.newJobName + "', jobStatus = " + jobToChange.newJobStatus + " WHERE id = " + jobToChange.jobId,
   function(error,result){
-    console.log(result);
+    res.send({});
+  });
+});
+
+app.post('/newJob', function(req,res){
+  var jobToAdd = {userId: req.body.userId, newJobNumber: req.body.newJobNumber, newJobName: req.body.newJobName, newJobStatus: req.body.newJobStatus}
+  connection.query("INSERT INTO JobbLista (userId,butikId,butiksNamn,jobStatus) VALUES ("+jobToAdd.userId+", "+ jobToAdd.newJobNumber+", '"+jobToAdd.newJobName+"', "+jobToAdd.newJobStatus+")",
+  function(error,result){
+    res.send({});
   });
 });
