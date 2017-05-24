@@ -6,15 +6,23 @@ import NavbarComponent from './components/NavbarComponent/NavbarComponent';
 import ContactComponent from './components/ContactComponent/ContactComponent';
 import AboutComponent from './components/AboutComponent/AboutComponent';
 import GetJobsComponent from './components/GetJobsComponent/GetJobsComponent';
-//cd Documents/"Högskolan Väst"/"TSB100 - Tillämpad Systemintegration"/akcentralen/akcentralenapp
-
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 class App extends Component {
 
   constructor()
   {
     super();
-    this.state = {loggedIn: false};
+    if(cookies.get('userId') == null)
+    {
+      this.state = {loggedIn: false};
+    }
+    else if (cookies.get('userId') != null) 
+    {
+      this.state = {loggedIn: true};
+    }
+    
   }
 
   changeLoginStatus(newValue)

@@ -20,8 +20,6 @@ connection.connect(function(err) {
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
-
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -31,7 +29,21 @@ app.use(function(req, res, next) {
 app.get('/getAllJobs', function(req,res){
   connection.query('SELECT * FROM JobbLista', 
   function(error,result){
-    console.log(result);
+    for (var i = 0; i<result.length;i++)
+    {
+      if(result[i].jobStatus == 0) 
+      {
+        result[i].jobStatus = "Ännu inte utfört";
+      } 
+      else if (result[i].jobStatus == 1)
+      {
+        result[i].jobStatus = "Utför jobb";
+      }
+      else 
+      {
+        result[i].jobStatus = "Jobb utfört";
+      }
+    }
     res.send({jobb: result});
   });
 });
@@ -59,7 +71,6 @@ app.post('/getJobList', function(req,res){
   });
 });
 
-
 app.post('/logInUser', function(req, res) {
   var user = {username: req.body.username, password: req.body.password};
   
@@ -74,4 +85,13 @@ app.post('/logInUser', function(req, res) {
       res.send({userId: result[0].id, userName: result[0].Username, email: result[0].Email, typeOfUser: result[0].TypeOfUser});
     }
   }); 
+});
+
+app.post('/removeJob', function(req, res){
+  var jobToRemove = {jobId: req.body.jobId}
+  connection.query('DELETE FROM JobbLista WHERE id = ' + jobToRemove.jobId,
+  function(error,result){
+    console.log(result);
+    console.log(error);
+  });
 });

@@ -11,11 +11,10 @@ constructor(props)
 {
     super(props);
     this.state = {jobs: []};
+    this.getJobs = this.getJobs.bind(this);
 }
 
-
-
-componentWillMount()
+getJobs()
 {
   if(cookies.get('typeOfUser') === 'Admin')
   {
@@ -46,16 +45,21 @@ componentWillMount()
   }
 }
 
+componentWillMount()
+{
+  this.getJobs();  
+}
+
 
   render() {
     return (
       <div>
         <div id="updateAndNewJob">
           <button className="btn btn-primary" id="newJobButton">Nytt jobb</button>
-          <button className="btn btn-primary" id="updateJobButton">Uppdatera lista</button>
+          <button className="btn btn-primary" id="updateJobButton" onClick={this.getJobs}>Uppdatera lista</button>
           <hr/>
         </div>     
-        <div className="JobGruppItem"><JobGroup dataset={this.state.jobs}/></div>
+        <div className="JobGruppItem"><JobGroup dataset={this.state.jobs} updatelist={this.getJobs}/></div>
       </div>
     );
   }

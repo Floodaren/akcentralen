@@ -11,9 +11,18 @@
     
 }
 
-#ChangeJobInfoModal
+#checkboxDiv
 {
-    font-size: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
+    height: 40px;
+}
+
+.jobCheckbox 
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#Savebutton 
+{
+    height: 40px;
 }
