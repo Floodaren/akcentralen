@@ -6,7 +6,6 @@ class JobGroup extends Component {
 
   render() {
     const listItems = this.props.dataset.map((job, i) => <JobGroupItem key={i} jobDetails={job} updatelist={this.props.updatelist}/>);
-    
     return (
       <div>
         <ul id="jobHolder">

@@ -95,3 +95,11 @@ app.post('/removeJob', function(req, res){
     console.log(error);
   });
 });
+
+app.post('/saveJobChanges', function(req,res){
+  var jobToChange = {jobId: req.body.jobId, newJobNumber: req.body.newJobNumber, newJobName: req.body.newJobName, newJobStatus: req.body.newJobStatus}
+  connection.query('UPDATE JobbLista SET butikId = ' + "'" + jobToChange.newJobNumber + "', butiksNamn = '" + jobToChange.newJobName + "', jobStatus = " + jobToChange.newJobStatus + " WHERE id = " + jobToChange.jobId,
+  function(error,result){
+    console.log(result);
+  });
+});
