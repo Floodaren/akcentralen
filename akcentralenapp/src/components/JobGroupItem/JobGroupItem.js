@@ -40,7 +40,6 @@ class JobGroupItem extends Component {
     let newJobName = "";
     let newJobNumber = "";
     let newJobStatus = "";
-    console.log(this.state.radiobuttonvalue);
 
     if (this.state.butiksnamn === "")
     {
@@ -62,7 +61,18 @@ class JobGroupItem extends Component {
 
     if(this.state.radiobuttonvalue === "")
     {
-      newJobStatus = this.props.jobDetails.jobStatus;
+      if (this.props.jobDetails.jobStatus === "Ännu inte utfört")
+      {
+        newJobStatus = 0;
+      }
+      else if (this.props.jobDetails.jobStatus === "Utför jobb")
+      {
+        newJobStatus = 1;
+      }
+      else 
+      {
+        newJobStatus = 2;
+      } 
     }
     else 
     {
