@@ -73,7 +73,7 @@ class Modal extends Component {
                     </div>
                     <div className="form-group" id="checkboxDiv">
                         <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("2")} /><span> </span>Klar</label>
-                        <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("1")} /><span> </span>Påväg</label>
+                        <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("1")} /><span> </span>Utför jobb</label>
                         <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("0")} /><span> </span>Inte klar</label>
                     </div>
                     <div className="form-group" id="Savebutton">

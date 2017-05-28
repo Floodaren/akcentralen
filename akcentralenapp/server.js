@@ -31,6 +31,7 @@ app.get('/getAllJobs', function(req,res){
   function(error,result){
     for (var i = 0; i<result.length;i++)
     {
+      result[i].butiksNamn = result[i].butiksNamn.toUpperCase();
       if(result[i].jobStatus == 0) 
       {
         result[i].jobStatus = "Ännu inte utfört";

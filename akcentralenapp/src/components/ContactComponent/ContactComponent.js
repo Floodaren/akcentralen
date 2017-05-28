@@ -4,7 +4,8 @@ import './ContactComponent.css';
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid text-center test">
+      <div id="contactInfo" className="container-fluid text-center test">
+        <hr/>
         <h2>Kontakta oss?</h2>
         <p>AK-Centralen AB<br/>
           Datavägen 14B<br/>

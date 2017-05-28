@@ -2,12 +2,14 @@
 {
     padding: 0px;
     font-size: 15px;
+    width: 90px;
 }
 
 #jobbItem
 {
     padding-top: 10px;
     padding-bottom: 10px;
+    
 }
 
 #checkboxDiv
@@ -17,8 +19,8 @@
 
 .jobCheckbox 
 {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #Savebutton 

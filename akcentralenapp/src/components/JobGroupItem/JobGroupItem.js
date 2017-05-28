@@ -90,7 +90,7 @@ class JobGroupItem extends Component {
           </div>
           <div className="form-group" id="checkboxDiv">
             <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("2")} /><span> </span>Klar</label>
-            <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("1")} /><span> </span>Påväg</label>
+            <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("1")} /><span> </span>Utför jobb</label>
             <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("0")} /><span> </span>Inte klar</label>
           </div>
           <div className="form-group" id="Savebutton">
@@ -110,8 +110,8 @@ class JobGroupItem extends Component {
           <div className="col-sm-2 col-md-offset-1" id="storeNumber">{this.props.jobDetails.butikId}</div>
           <div className="col-sm-2" id="storeName">{this.props.jobDetails.butiksNamn}</div>
           <div className="col-sm-2" id="storeStatus">{this.props.jobDetails.jobStatus}</div>
-          <div className="col-sm-2"><button className="btn btn-primary" id="ChangeJobButton" type="button" onClick={this.show}>Ändra</button></div>
-          <div className="col-sm-2"><button className="btn btn-primary" id="ChangeJobButton" type="button" onClick={() => this.removeJob(this.props.jobDetails.id)}>Radera</button></div>
+          <div className="col-sm-2"><button className="btn btn-warning" id="ChangeJobButton" type="button" onClick={this.show}>Ändra</button></div>
+          <div className="col-sm-2"><button className="btn btn-danger" id="ChangeJobButton" type="button" onClick={() => this.removeJob(this.props.jobDetails.id)}>Radera</button></div>
         </div>
         <hr />
       </li>
