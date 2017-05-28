@@ -1,0 +1,11 @@
+.contactInfo
+{
+    color: blue;
+    text-decoration: none;
+}
+
+.contactInfo:hover
+{
+    color: red;
+    font-size: 104%;
+}

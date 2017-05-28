@@ -25,3 +25,35 @@
 {
     height: 40px;
 }
+
+#modalStyle 
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#storeNumber
+{
+    font-weight: bold;
+}
+
+#storeName
+{
+    font-weight: bold;
+}
+
+#storeStatus
+{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px)
+{
+    #ChangeJobButton
+    {
+        margin-top: 10px;
+        display: inline-block;
+        width: 33%;
+    }
+}

@@ -5,7 +5,6 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 import './GetJobsComponent.css';
 const cookies = new Cookies();
-
 class GetJobs extends Component {
 
   constructor(props) {
@@ -44,15 +43,19 @@ class GetJobs extends Component {
 
   componentWillMount() {
     this.updatelist();
+    if (cookies.get('typeOfUser') === "Admin")
+    {
+      setInterval(()=>this.updatelist(),30000);
+    }
   }
-
-
+  
   render() {
     return (
       <div>
         <div id="updateAndNewJob">
-          <div className="col-sm-6"><NewJobModal updatelist={this.updatelist.bind(this)}/></div>
-          <div className="col-sm-6"><button className="btn btn-primary" id="updateJobButton" onClick={this.updatelist}>Uppdatera lista</button></div>
+          <div className="col-sm-4"><NewJobModal updatelist={this.updatelist.bind(this)}/></div>
+          <div className="col-sm-4"><button className="btn btn-primary" id="updateJobButton" onClick={this.updatelist}>Uppdatera lista</button></div>
+          <div className="col-sm-4"><button className="btn btn-primary" id="callAKButton"><a href="tel:0313108800" id="phoneNumber">Ring AK-Centralen</a></button></div>
           <hr />
         </div>
         <div className="JobGruppItem"><JobGroup dataset={this.state.jobs} updatelist={this.updatelist.bind(this)} /></div>

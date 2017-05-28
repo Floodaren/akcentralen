@@ -4,7 +4,7 @@ import './AboutComponent.css';
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid text-center test">
+      <div className="container-fluid text-center">
         <h2>Vad vi erbjuder</h2>
         <br/>
         <div className="row">

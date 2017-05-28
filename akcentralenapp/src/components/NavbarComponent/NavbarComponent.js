@@ -26,7 +26,12 @@ removeCookie(event)
 }
 
   render() {
-    
+    let showLogOutButton = ""
+    if (this.props.loggedIn === true)
+    {
+      showLogOutButton = <MenuItem eventKey={2}><div onClick={this.removeCookie}>Logga ut</div></MenuItem> 
+    }
+
     return (
       <div>
         <Navbar collapseOnSelect>
@@ -40,15 +45,8 @@ removeCookie(event)
             <Nav>
             </Nav>
             <Nav pullRight>
-              <NavItem eventKey={1} href="#">Link Right</NavItem>
-              <NavItem eventKey={2} href="#">Link Right</NavItem>
-              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1}>Action</MenuItem>
-                <MenuItem eventKey={3.2}>Another action</MenuItem>
-                <MenuItem eventKey={3.3} href="http://www.ak-centralen.dk/sv/" target="_blank">Ak-centralen</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey={3.4}><div onClick={this.removeCookie}>Logga ut</div></MenuItem>
-              </NavDropdown>
+              <MenuItem eventKey={1} href="http://www.ak-centralen.dk/sv/" target="_blank">Ak-centralens hemsida</MenuItem>
+              {showLogOutButton}
             </Nav>
           </Navbar.Collapse>
         </Navbar>

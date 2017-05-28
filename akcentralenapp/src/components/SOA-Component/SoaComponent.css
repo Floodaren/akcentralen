@@ -1,0 +1,21 @@
+#showEventPicture
+{
+    padding: 2px;
+    margin-right: 10px;
+}
+
+#removeEventPicture
+{
+    padding: 2px;
+    margin-left: 5px;
+}
+
+#showRemoveEventButtons
+{
+    margin-bottom: 20px;
+}
+
+#eventPic 
+{
+    width: 100%;
+}

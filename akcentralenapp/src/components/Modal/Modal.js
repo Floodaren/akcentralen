@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Modalimport from 'simple-react-modal';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
+import './Modal.css';
 const cookies = new Cookies();
 
 class Modal extends Component {
@@ -61,21 +62,23 @@ class Modal extends Component {
         let showChangeModal = "";
         if (this.state.showModal === true) {
             showChangeModal = <Modalimport show={this.show} onClose={this.close} containerStyle={{ width: '300px' }}>
-                <div className="form-group">
-                    <label for="usr">Butiksnummer:</label>
-                    <input type="text" className="form-control" id="butiksnummer" onChange={this.onButiksnummerChange} />
-                </div>
-                <div className="form-group">
-                    <label for="pwd">Butiksnamn:</label>
-                    <input type="text" className="form-control" id="butiksnamn" onChange={this.onButiksnamnChange} />
-                </div>
-                <div className="form-group" id="checkboxDiv">
-                    <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("2")} /><span> </span>Klar</label>
-                    <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("1")} /><span> </span>Påväg</label>
-                    <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("0")} /><span> </span>Inte klar</label>
-                </div>
-                <div className="form-group" id="Savebutton">
-                    <button className="btn btn-primary" onClick={() => this.newJob(cookies.get('userId'), this.state.radiobuttonvalue)}>Spara</button>
+                <div id="modalStyle">
+                    <div className="form-group">
+                        <label for="usr">Butiksnummer:</label>
+                        <input type="text" className="form-control" id="butiksnummer" onChange={this.onButiksnummerChange} />
+                    </div>
+                    <div className="form-group">
+                        <label for="pwd">Butiksnamn:</label>
+                        <input type="text" className="form-control" id="butiksnamn" onChange={this.onButiksnamnChange} />
+                    </div>
+                    <div className="form-group" id="checkboxDiv">
+                        <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("2")} /><span> </span>Klar</label>
+                        <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("1")} /><span> </span>Påväg</label>
+                        <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("0")} /><span> </span>Inte klar</label>
+                    </div>
+                    <div className="form-group" id="Savebutton">
+                        <button className="btn btn-primary" onClick={() => this.newJob(cookies.get('userId'), this.state.radiobuttonvalue)}>Spara</button>
+                    </div>
                 </div>
             </Modalimport>
         }
