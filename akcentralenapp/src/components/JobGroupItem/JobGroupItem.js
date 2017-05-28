@@ -35,13 +35,45 @@ class JobGroupItem extends Component {
     this.setState({ showModal: false });
   }
 
-  saveChanges(jobId, jobStatus) {
+  saveChanges(jobId, jobStatus) {    
     let self = this;
+    let newJobName = "";
+    let newJobNumber = "";
+    let newJobStatus = "";
+    console.log(this.state.radiobuttonvalue);
+
+    if (this.state.butiksnamn === "")
+    {
+      newJobName = this.props.jobDetails.butiksNamn;
+    }
+    else 
+    {
+      newJobName = this.state.butiksnamn;
+    }
+
+    if (this.state.butiksnummer === "")
+    {
+      newJobNumber = this.props.jobDetails.butikId;
+    }
+    else 
+    {
+      newJobNumber = this.state.butiksnummer;
+    }
+
+    if(this.state.radiobuttonvalue === "")
+    {
+      newJobStatus = this.props.jobDetails.jobStatus;
+    }
+    else 
+    {
+      newJobStatus = this.state.radiobuttonvalue;
+    }
+
     axios.post('http://localhost:3030/saveJobChanges', {
       jobId: jobId,
-      newJobNumber: this.state.butiksnummer,
-      newJobName: this.state.butiksnamn,
-      newJobStatus: jobStatus
+      newJobNumber,
+      newJobName,
+      newJobStatus,
     })
       .then(function (response) {
         console.log(response);
@@ -82,11 +114,11 @@ class JobGroupItem extends Component {
         <div id="modalStyle">
           <div className="form-group">
             <label for="usr">Butiksnummer:</label>
-            <input type="text" className="form-control" id="butiksnummer" onChange={this.onButiksnummerChange} />
+            <input type="text" className="form-control" id="butiksnummer" placeholder="Lämna tom för samma värde" onChange={this.onButiksnummerChange} />
           </div>
           <div className="form-group">
             <label for="pwd">Butiksnamn:</label>
-            <input type="text" className="form-control" id="butiksnamn" onChange={this.onButiksnamnChange} />
+            <input type="text" className="form-control" id="butiksnamn" placeholder="Lämna tom för samma värde" onChange={this.onButiksnamnChange} />
           </div>
           <div className="form-group" id="checkboxDiv">
             <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("2")} /><span> </span>Klar</label>
