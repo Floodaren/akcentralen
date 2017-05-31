@@ -149,7 +149,7 @@ class JobGroupItem extends Component {
       <li id="jobbItem">
         <div className="row">
           {showChangeModal}
-          <div className="col-sm-2 col-md-offset-1" id="storeNumber">{this.props.jobDetails.butikId}</div>
+          <div className="col-sm-2 col-sm-offset-1" id="storeNumber">{this.props.jobDetails.butikId}</div>
           <div className="col-sm-2" id="storeName">{this.props.jobDetails.butiksNamn}</div>
           <div className="col-sm-2" id="storeStatus">{this.props.jobDetails.jobStatus}</div>
           <div className="col-sm-2"><button className="btn btn-warning" id="ChangeJobButton" type="button" onClick={this.show}>Ändra</button></div>

@@ -57,8 +57,8 @@ class App extends Component {
         {showjobs}
         {showAboutInfo}
         {showContactInfo}
-        {/* Komponenten för att hämta info från SOA-projektet{showSOAComponent}*/}
-        {/* Komponenten för att hämta väderinforamtion fårn ett API på nätet<OpenApi/>*/}
+        {/* Komponenten för att hämta info från SOA-projektet ta bort kommentarer för att visa komponenten {showSOAComponent}*/}
+        {/* Komponenten för att hämta väderinforamtion fårn ett API på nätet ta bort kommentarer för att visa komponenten <OpenApi/>*/}
       </div>
     );
   }

@@ -38,6 +38,11 @@ class Modal extends Component {
 
     newJob(userId, jobStatus) {
         let self = this;
+        let correctInput = false;
+        if (this.state.butiksnummer === "" || this.state.butiksnamn === "" || jobStatus === "")
+        {
+            alert("Felaktig inmatning, försök igen");
+        }
         axios.post('http://localhost:3030/newJob', {
             userId: userId,
             newJobNumber: this.state.butiksnummer,
