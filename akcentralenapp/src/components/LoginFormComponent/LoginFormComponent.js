@@ -53,6 +53,7 @@ handleSubmit() {
   })
   .catch(function (error) {
     console.log(error);
+    alert("Kunde inte kontakta servern");
   });
 }
 

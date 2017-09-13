@@ -45,6 +45,7 @@ app.get('/getAllJobs', function(req,res){
         result[i].jobStatus = "Jobb utfört";
       }
     }
+    console.log(result);
     res.send({jobb: result});
   });
 });
@@ -55,6 +56,7 @@ app.post('/getJobList', function(req,res){
   function(error,result){
     for (var i = 0; i<result.length;i++)
     {
+      result[i].butiksNamn = result[i].butiksNamn.toUpperCase();
       if(result[i].jobStatus == 0) 
       {
         result[i].jobStatus = "Ännu inte utfört";

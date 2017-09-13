@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './JobGroupItem.css';
 import Modal from 'simple-react-modal';
 import axios from 'axios';
+import DeleteConfirm from './DeleteConfirm';
 
 class JobGroupItem extends Component {
   constructor(props) {
@@ -118,7 +119,6 @@ class JobGroupItem extends Component {
 
   render() {
     let showChangeModal = "";
-
     if (this.state.showModal === true) {
       showChangeModal = <Modal show={this.show} onClose={this.close} containerStyle={{ width: '300px' }}>
         <div id="modalStyle">
@@ -153,7 +153,7 @@ class JobGroupItem extends Component {
           <div className="col-sm-2" id="storeName">{this.props.jobDetails.butiksNamn}</div>
           <div className="col-sm-2" id="storeStatus">{this.props.jobDetails.jobStatus}</div>
           <div className="col-sm-2"><button className="btn btn-warning" id="ChangeJobButton" type="button" onClick={this.show}>Ändra</button></div>
-          <div className="col-sm-2"><button className="btn btn-danger" id="ChangeJobButton" type="button" onClick={() => this.removeJob(this.props.jobDetails.id)}>Radera</button></div>
+          <div className="col-sm-2"><DeleteConfirm removeMethod={this.removeJob} removeId={this.props.jobDetails.id}/></div>          
         </div>
         <hr />
       </li>

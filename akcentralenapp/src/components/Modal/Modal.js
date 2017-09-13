@@ -38,7 +38,6 @@ class Modal extends Component {
 
     newJob(userId, jobStatus) {
         let self = this;
-        let correctInput = false;
         if (this.state.butiksnummer === "" || this.state.butiksnamn === "" || jobStatus === "")
         {
             alert("Felaktig inmatning, försök igen");
@@ -70,11 +69,11 @@ class Modal extends Component {
                 <div id="modalStyle">
                     <div className="form-group">
                         <label for="usr">Butiksnummer:</label>
-                        <input type="text" className="form-control" id="butiksnummer" onChange={this.onButiksnummerChange} />
+                        <input type="text" className="form-control" id="butiksnummer" placeholder="Måste anges" onChange={this.onButiksnummerChange} />
                     </div>
                     <div className="form-group">
                         <label for="pwd">Butiksnamn:</label>
-                        <input type="text" className="form-control" id="butiksnamn" onChange={this.onButiksnamnChange} />
+                        <input type="text" className="form-control" id="butiksnamn" placeholder="Måste anges" onChange={this.onButiksnamnChange} />
                     </div>
                     <div className="form-group" id="checkboxDiv">
                         <label className="jobCheckbox"><input type="radio" name="optradio" onChange={() => this.onRadioBottonChange("2")} /><span> </span>Klar</label>

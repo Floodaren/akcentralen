@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './JobGroupComponent.css';
 import JobGroupItem from '../JobGroupItem/JobGroupItem';
 
+
 class JobGroup extends Component {
 
   render() {

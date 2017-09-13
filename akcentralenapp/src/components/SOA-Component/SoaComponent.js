@@ -20,13 +20,14 @@ class SoaComponent extends Component {
 
     componentDidMount() {
         var self = this;
-        axios.get('http://decoreapp.azurewebsites.net/api/events/3', {
+        axios.get('http://decoreapp.azurewebsites.net/api/events/12', {
         })
             .then(function (response) {
                 self.setState({ imgURL: response.data.ImageURL });
                 return response;
             })
             .catch(function (error) {
+                alert("Eventet finns inte");
                 console.log(error);
             });
     }
